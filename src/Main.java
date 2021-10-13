@@ -18,5 +18,9 @@ public class Main {
 				new Impiegato("Roberto", 195),
 				new Impiegato("Antonio", 186),
 				new Impiegato("Massimo", 178)));
+		List<Impiegato> impiegatoSortList = impiegatoList.stream()
+				.sorted((i1, i2) -> i1.getEta() - i2.getEta())
+				.collect(Collectors.toList());
+		impiegatoSortList.forEach(System.out::println);
  	}
 }
